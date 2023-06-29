@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+h3 {
+    margin: 0;
+}
+.container {
+    background-color: rgb(71, 236, 254);
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: flex-start;
+    gap: 30px;
+}
+.card {
+    background-color: silver;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    background-image: url("https://w.forfun.com/fetch/37/37a4388d1f27bf3cb994125648f8ed81.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.default {
+    background-image: url(../BD1/image/png-clipart-cat-kitty-creative-cat.png);
+    background-size: contain;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dedede90;
+}
+.card>* {
+    position: relative;
+}
+.card__like {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: crimson;
+    cursor: pointer;
+}
+.card__trash {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    cursor: pointer;
+    color: grey;
+}
+.card__trash:hover {
+    color: coral;
+}
+.card h3 {
+    margin-bottom: 5px;
+}
+.empty {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 calc(50% - 300px);
+}
+.empty::after {
+    content: "...";
+}
+.modal-container {
+    position: fixed;
+    background-color: #0008;
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal {
+    background-color: bisque;
+    padding: 30px;
+    border-radius: 8px;
+    width: calc(100% - 60px);
+    max-width: 300px;
+    max-height: calc(100% - 60px);
+    position: relative;
+}
+.modal h2 {
+    margin-top: 0;
+}
+.modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.modal-close:hover {
+    color: coral
+}
+.modal form {
+    display: grid;
+    gap: 10px;
+}
+input, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid darkgray;
+    background-color: transparent;
+}
+nav {
+    position: fixed;
+    box-sizing: border-box;
+    height: 100%;
+    right: 0;
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    align-content: center;
+}
+.control>i {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.control>i:hover {
+    color: silver;
+}

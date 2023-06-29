@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Котик</h1>
+    <div class="info"></div>
+    <script>
+       
+        console.log(location);
+        let id = location.search.split("=");
+        id = id[id.length - 1];
+        console.log(id);
+        const box = document.querySelector(".info");
+
+
+        let user = localStorage.getItem("cat12"); 
+if (!user) {
+    user = prompt("Ваше уникальное имя: ", "VolodinIvan");
+    localStorage.setItem("cat12", user);
+}
+
+const path = `https://cats.petiteweb.dev/api/single/${user}`;
+
+      
+
+        fetch(`${path}/show/${id}`)
+            .then(res => {
+                if (res.ok) {
+                    return res.json()
+                }
+            })
+            .then(data => {
+                box.innerHTML = `<h2>${data.name}</h2>`
+            })
+    </script>
+    
+</body>
+</html>
