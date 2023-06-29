@@ -10,7 +10,6 @@
     <h1>Котик</h1>
     <div class="info"></div>
     <script>
-       
         console.log(location);
         let id = location.search.split("=");
         id = id[id.length - 1];
@@ -19,14 +18,12 @@
 
 
         let user = localStorage.getItem("cat12"); 
-if (!user) {
-    user = prompt("Ваше уникальное имя: ", "VolodinIvan");
-    localStorage.setItem("cat12", user);
-}
+        if (!user) {
+            user = prompt("Ваше уникальное имя: ", "mrs_jaky");
+            localStorage.setItem("cat12", user);
+        }
 
-const path = `https://cats.petiteweb.dev/api/single/${user}`;
-
-      
+        const path = `https://cats.petiteweb.dev/api/single/${user}`
 
         fetch(`${path}/show/${id}`)
             .then(res => {

@@ -31,7 +31,7 @@ h3 {
     justify-content: center;
 }
 .default {
-    background-image: url(../BD1/image/png-clipart-cat-kitty-creative-cat.png);
+    background-image: url(image/png-clipart-cat-kitty-creative-cat.png);
     background-size: contain;
 }
 .card::before {

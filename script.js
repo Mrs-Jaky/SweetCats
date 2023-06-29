@@ -108,7 +108,6 @@ if (cats) {
         .then(function(res) {
             console.log(res);
             if (res.statusText === "OK") {
-              
                 return res.json();
             }
         })
